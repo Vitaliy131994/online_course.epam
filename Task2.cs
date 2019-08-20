@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ConsoleApplication1
+﻿namespace Task2
 {
     class Program
         {
@@ -23,8 +17,6 @@ namespace ConsoleApplication1
             Rectangle R = new Rectangle(Point1, Point2);
             Console.WriteLine("Perum:"+R.Perum());
             Console.WriteLine("Square:"+R.Square());
-            // Console.WriteLine("sdkjflksdjfs");
-
             Console.ReadKey();
 
         }

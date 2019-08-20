@@ -1,59 +1,64 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ConsoleApplication1
+public class Program
 {
-    class Program
-        {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Enter x1");
-            int x1 = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter y1");
-            int y1 = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter x2");
-            int x2 = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter y2");
-            int y2 = int.Parse(Console.ReadLine());
-            Point Point1 = new Point(x1, y1);
-            Point Point2 = new Point(x2, y2);
-            Rectangle R = new Rectangle(Point1, Point2);
-            Console.WriteLine("Perum:"+R.Perum());
-            Console.WriteLine("Square:"+R.Square());
-            // Console.WriteLine("sdkjflksdjfs");
+    public static void Main()
+    {
+        Console.WriteLine("Enter X1");
+        int x1 = int.Parse(Console.ReadLine());
+        Console.WriteLine("Enter Y1");
+        int y1 = int.Parse(Console.ReadLine());
+        Console.WriteLine("Enter X2");
+        int x2 = int.Parse(Console.ReadLine());
+        Console.WriteLine("Enter Y2");
+        int y2 = int.Parse(Console.ReadLine());
 
-            Console.ReadKey();
+        Point A = new Point(x1, y1);
+        Point B = new Point(x2, y2);
 
-        }
+        Rectangle r = new Rectangle(A, B);
+
+        Console.WriteLine("Perum: " + r.Perum());
+        Console.WriteLine("Square: " + r.square());
+        Console.ReadLine();
     }
+
     class Rectangle
     {
-        Point a;
-        public int ab {
-            get { return c.x - a.x; }
-        
-        }
-        Point c;
-        public int bc
+        private Point A;
+        private Point C;
+
+        public Rectangle(Point A, Point C)
         {
-            get { return c.y - a.y; }
+            this.A = A;
+            this.C = C;
         }
-        public Rectangle(Point a1, Point c1) { a = a1;c = c1;  }
-        public int Perum() {
-            
-            return (ab + bc) * 2; 
-                }
-        public int Square() {
-              return (ab * bc);
+
+        public int Perum()
+        {
+            int ab = C.x - A.x;
+            int bc = C.y - A.y;
+            return (ab + bc) * 2;
         }
+
+        public int square()
+        {
+            int ab = C.x - A.x;
+            int bc = C.y - A.y;
+            return ab * bc;
         }
+
+    }
+
     class Point
     {
-        public Point(int x1, int y1) { x = x1;y = y1; } 
-        public int x;
-        public int y;
+        public int x, y;
+
+        public Point(int x, int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
+
     }
 }
